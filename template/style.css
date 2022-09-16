@@ -58,7 +58,7 @@ a.brand{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
 }
 .row.center{
     justify-content: center;
@@ -86,4 +86,9 @@ img.medium {
 }
 .price {
     font-size: 2rem;
+}
+/* Rating */
+.rating span {
+    color: #f0c040;
+    margin: 0.1rem;
 }
