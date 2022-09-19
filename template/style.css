@@ -66,9 +66,12 @@ a.brand{
 /* Image */
 img {
     border-radius: 0.5rem;
+    height: 20rem;
+    width: 29rem;
 }
 img.medium {
     max-width: 29rem;
+    /* height: 25rem; */
     width: 100%;
 }
 /* Card */
