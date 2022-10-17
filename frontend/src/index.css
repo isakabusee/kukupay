@@ -1,4 +1,4 @@
-html{
+/* html{
   font-size: 62.5%;
   box-sizing: border-box;
 }
@@ -9,17 +9,18 @@ body{
   font-family: Arial, Helvetica, sans-serif;
 }
 /* Layout */
-.grid-container {
+/* .grid-container {
   display: grid;
   grid-template-areas: 'header' 'main' 'footer';
   grid-template-columns: 1fr;
   grid-template-rows: 5rem 1fr 5rem;
   height: 100%;
-}
-header {
+} */
+/* header {
   grid-area: header;
   background-color: #203040;
 }
+
 main {
   grid-area: main;
   padding: 1rem;
@@ -28,9 +29,9 @@ footer {
   grid-area: footer;
   background-color: #203040;
   color: #ffffff;
-}
+} */
 /* Common */
-h1{
+/* h1{
   font-size: 1.8rem;
   padding: 1rem 0;
 }
@@ -43,9 +44,9 @@ a{
 }
 a:hover{
   color: #ff8000;
-}
+} */
 /* Header */
-header a{
+/* header a{
   color: #ffffff;
   padding: 1rem;
 }
@@ -53,8 +54,8 @@ a.brand{
   color: #ffffff;
   font-size: 3rem;
   font-weight: bold;
-}
-.row {
+} */
+/* .row {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -62,20 +63,19 @@ a.brand{
 }
 .row.center{
   justify-content: center;
-}
+} */
 /* Image */
-img {
+/* img {
   border-radius: 0.5rem;
   height: 20rem;
   width: 29rem;
-}
-img.medium {
+} */
+/* img.medium {
   max-width: 29rem;
-  /* height: 25rem; */
   width: 100%;
-}
+} */
 /* Card */
-.card {
+/* .card {
   border: 0.1rem #c0c0c0 solid;
   background-color: #f8f8f8;
   border-radius: 0.5rem;
@@ -89,12 +89,45 @@ img.medium {
 }
 .price {
   font-size: 2rem;
-}
+} */
 /* Rating */
-.rating span {
+/* .rating span {
   color: #f0c040;
   margin: 0.1rem;
-}
-.rating span:last-child {
+} */
+/* .rating span:last-child {
   color: #404040;
+} */ 
+
+/* New */
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.site-container {
+  min-height: 100vh;
+}
+main {
+  flex: 1;
+  padding: 1rem;
+}
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center ;
+}
+
+.product {
+  border: 1px #404040 solid;
+  margin: 1rem;
+}
+
+.product img {
+  width: 100%;
+  max-width: 400px;
+}
+.product-info {
+  padding: 1rem;
 }

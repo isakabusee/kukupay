@@ -1,37 +1,28 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom'
-import data from './data';
+import { BrowserRouter as Router, Link, Route, Routes } from 'react-router-dom';
 import './App.css';
-import Product from './components/Product'
+import HomeScreen from './screens/HomeScreen';
+import ProductScreen from './screens/ProductScreen';
 
 
 function App() {
   return (
-    <BrowserRouter>
-    
-    <div className="grid-container">
-    <header className="row">
-        <div>
-            <a className="brand" href="/">kukuPay Market Place</a>
-        </div>
-        <div>
-            <a href="/cart">Cart</a>
-            <a href="/signin">Sign In</a>
-        </div>
+        <Router>
+    <div>
+    <header>
+            <Link to="/">kukuPay Market Place</Link>
     </header>
     <main>
-        <div className="row center">
-            {
-                data.products.map((product) => (
+            <Routes>
+            <Route path="/" element={<HomeScreen />} />
+            <Route path="/product/:slug" element={<ProductScreen />} />
 
-           <Product Product key={product._id} product={product}></Product>
-                ))
-            }
-        </div>
+            </Routes>
+       
     </main>
     <footer className="row center">All rights reserved</footer>
 </div>
-</BrowserRouter>
+        </Router>
   );
 }
 
