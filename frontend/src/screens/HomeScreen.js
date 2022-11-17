@@ -49,6 +49,7 @@ function HomeScreen() {
             ) : error ? (
               <div>{error}</div>
             ) : (
+              
           products.map((product) => (
             <div className="product" key={product.slug}>
               <Link to={`/product/${product.slug}`}>
