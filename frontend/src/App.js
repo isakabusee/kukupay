@@ -5,7 +5,8 @@ import HomeScreen from './screens/HomeScreen';
 import ProductScreen from './screens/ProductScreen';
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
-import { LinkContainer } from 'react-router-bootstrap'
+import { LinkContainer } from 'react-router-bootstrap';
+
 
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
         <Navbar bg="dark" variant="dark">
                 <Container>
                         <LinkContainer to="/">
-                        <Navbar.Brand>kukuPay Market Place</Navbar.Brand>    
+                        <Navbar.Brand>KukuPay Marketplace</Navbar.Brand>    
                         </LinkContainer>
                 </Container>
         </Navbar>
