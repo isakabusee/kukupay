@@ -22,7 +22,7 @@ const data = {
             image: '/images/nike.png',
             price: 60,
             priceTsh: 200000,
-            countInStock: 16,
+            countInStock: 0,
             brand: 'Nike',
             rating: 4.5,
             numReviews: 11,
