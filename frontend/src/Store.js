@@ -9,7 +9,7 @@ const initialState = {
 };
 function reducer(state, action) {
   switch (action.type) {
-    case "CART_ADD_ITEM":
+    case 'CART_ADD_ITEM':
       // add to cart
       const newItem = action.payload;
       const existItem = state.cart.cartItems.find(
@@ -23,7 +23,7 @@ function reducer(state, action) {
       localStorage.setItem("cartItems", JSON.stringify(cartItems));
       return { ...state, cart: { ...state.cart, cartItems } };
     // return { ...state, cart: { ...state.cart, cartItems: [...state.cart.cartItems, action.payload] }};
-    case "CART_REMOVE_ITEM": {
+    case 'CART_REMOVE_ITEM': {
       const cartItems = state.cart.cartItems.filter(
         (item) => item._id !== action.payload._id
       );

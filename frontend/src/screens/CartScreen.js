@@ -13,7 +13,7 @@ import axios from "axios";
 
 export default function CartScreen() {
     const navigate = useNavigate();
-    const {state, dispatch: ctxDispatch } = useContext(Store);
+    const { state, dispatch: ctxDispatch } = useContext(Store);
     const {
         cart: { cartItems },
     } = state;
@@ -25,7 +25,7 @@ export default function CartScreen() {
             return;
           }
           ctxDispatch({
-            type: "CART_ADD_ITEM",
+            type: 'CART_ADD_ITEM',
             payload: { ...item, quantity },
           });
     }
@@ -63,7 +63,7 @@ export default function CartScreen() {
                                             <i className="fas fa-minus-circle"></i>
                                         </Button>{' '}
                                         <span>{item.quantity}</span>{' '}
-                                        <Button variant="light" onClick={() => updateCartHandler(item, item.quantity + 1)} disabled={item.quantity === item.countInStock}>
+                                        <Button onClick={() => updateCartHandler(item, item.quantity + 1)} variant="light" disabled={item.quantity === item.countInStock}>
                                             <i className="fas fa-plus-circle"></i>
                                         </Button>
                                     </Col>
