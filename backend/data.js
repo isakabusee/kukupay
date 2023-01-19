@@ -1,7 +1,7 @@
 const data = {
     products: [
         {
-            _id : '1',
+            // _id : '1',
             name: 'iphone 13',
             slug: 'iphone 13',
             category: 'phone',
@@ -15,7 +15,7 @@ const data = {
             description: 'high quality product'
         },
         {
-            _id : '2',
+            // _id : '2',
             name: 'nike sneakers',
             slug: 'nike sneakers',
             category: 'shoes',
@@ -29,7 +29,7 @@ const data = {
             description: 'high quality shoes'
         },
         {
-            _id : '3',
+            // _id : '3',
             name: 'mens shirts',
             slug: 'mens slim shirt',
             category: 'clothes',
@@ -43,7 +43,7 @@ const data = {
             description: 'high quality mens clothes'
         },
         {
-            _id : '4',
+            // _id : '4',
             name: 'dress shirt',
             slug: 'dress shirt',
             category: 'clothes',
@@ -57,7 +57,7 @@ const data = {
             description: 'high quality product'
         },
         {
-            _id : '5',
+            // _id : '5',
             name: 'sunglasses',
             slug: 'sunglasses',
             category: 'eye wear',
@@ -71,7 +71,7 @@ const data = {
             description: 'high end sunglasses'
         },
         {
-            _id : '6',
+            // _id : '6',
             name: 'potatoes',
             slug: 'potatoes',
             category: 'farm produce',
@@ -85,7 +85,7 @@ const data = {
             description: 'high quality produce from Tanzania'
         },
         {
-            _id : '7',
+            // _id : '7',
             name: 'apple mouse',
             slug: 'apple mouse',
             category: 'mouse',
@@ -99,7 +99,7 @@ const data = {
             description: 'high quality product'
         },
         {
-            _id : '8',
+            // _id : '8',
             name: 'Viviscal',
             slug: 'Viviscal',
             category: 'beauty',
@@ -113,7 +113,7 @@ const data = {
             description: 'high quality shampoo'
         },
         {
-            _id : '9',
+            // _id : '9',
             name: 'mascara',
             slug: 'women mascara',
             category: 'beauty',
@@ -127,7 +127,7 @@ const data = {
             description: 'high quality mascara for women'
         },
         {
-            _id : '10',
+            // _id : '10',
             name: 'comforter',
             slug: 'comforter sets',
             category: 'bedding',
@@ -141,7 +141,7 @@ const data = {
             description: 'high quality comforter sets'
         },
         {
-            _id : '11',
+            // _id : '11',
             name: 'dining set',
             slug: 'indoor dining set',
             category: 'furniture',
@@ -153,6 +153,20 @@ const data = {
             rating: 4.5,
             numReviews: 10,
             description: 'high quality furniture'
+        },
+        {
+            // _id : '12',
+            name: 'macbook',
+            slug: 'macbook laptop',
+            category: 'computer',
+            image: '/images/macbook.png',
+            price: 1300,
+            priceTsh: 1500000,
+            countInStock: 20,
+            brand: 'Apple',
+            rating: 5,
+            numReviews: 15,
+            description: 'High performing computer with 1M chip technology'
         }
     ]
 }

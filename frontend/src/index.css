@@ -23,13 +23,15 @@ main {
 .rating span {
   color: #ffc000;
 }
-.product {
+.products {
   border: 1px #404040 solid;
   margin: 1rem;
+  padding: 5px;
 }
 
-.product img {
+.products img {
   width: 100%;
+  height: 250px;
   max-width: 400px;
 }
 .product-info {
