@@ -11,21 +11,20 @@ function Product(props) {
   const { product } = props;
   const {state, dispatch: ctxDispatch } = useContext(Store);
   const {
-      // cart: { cartItems },
-      cart
+      cart: { cartItems },
   } = state;
 
-  const addToCartHandler = async () => {
-    const existItem = cart.cartItems.find((x) => x._id === product._id);
+  const addToCartHandler = async (item) => {
+    const existItem = cartItems.find((x) => x._id === product._id);
     const quantity = existItem ? existItem.quantity + 1 : 1;
-    const { data } = await axios.get(`/api/poducts/${product._id}`);
+    const { data } = await axios.get(`/api/products/${item._id}`);
     if (data.countInStock < quantity) {
         window.alert('Sorry. Product is out of Stock');
         return;
       }
       ctxDispatch({
         type: 'CART_ADD_ITEM',
-        payload: { ...product, quantity },
+        payload: { ...item, quantity },
       });
       navigate('/cart');
 }
@@ -43,9 +42,7 @@ function Product(props) {
         <Card.Text>Tsh{product.priceTsh}</Card.Text>
         {product.countInStock === 0 ? (
           <Button variant='light' disabled> Out of stock</Button> ) : (
-            // <Button onClick={addToCartHandler}>Add to cart</Button>
-            <Button onClick={()=> {alert("I'm still working on that")}}>Add to cart</Button>
-            
+            <Button onClick={() => addToCartHandler(product)}>Add to cart</Button>
         )}
       </Card.Body>
       </Card>
