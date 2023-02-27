@@ -4,6 +4,8 @@ import './App.css';
 import HomeScreen from './screens/HomeScreen';
 import ProductScreen from './screens/ProductScreen';
 import CartScreen from './screens/CartScreen';
+import SigninScreen from './screens/SigninScreen';
+import ShippingAddressScreen from './screens/ShippingAddressScreen';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
@@ -11,7 +13,6 @@ import Badge from 'react-bootstrap/Badge';
 import Container from 'react-bootstrap/Container';
 import { LinkContainer } from 'react-router-bootstrap';
 import { Store } from './Store';
-import SigninScreen from './screens/SigninScreen';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 
@@ -66,6 +67,7 @@ function App() {
             <Route path="/product/:slug" element={<ProductScreen />} />
             <Route path="/cart" element={<CartScreen />} />
             <Route path="/signin" element={<SigninScreen />} />
+            <Route path="/shipping" element={<ShippingAddressScreen />} />
 
             </Routes>
         </Container>
