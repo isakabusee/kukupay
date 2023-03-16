@@ -26,6 +26,8 @@ function reducer(state, action) {
       localStorage.setItem("cartItems", JSON.stringify(cartItems));
       return { ...state, cart: { ...state.cart, cartItems } };
     // return { ...state, cart: { ...state.cart, cartItems: [...state.cart.cartItems, action.payload] }};
+    case 'CART_CLEAR':
+      return { ...state, cart: { ...state.cart, cartItems: [] }};
     case 'CART_REMOVE_ITEM': {
       const cartItems = state.cart.cartItems.filter(
         (item) => item._id !== action.payload._id
@@ -43,6 +45,11 @@ function reducer(state, action) {
     return {
       ...state,
       cart: { ...state.cart, shippingAddress: action.payload,}
+    };
+    case 'SAVE_SHIPPING_ADDRESS_MAP_LOCATION':
+    return {
+      ...state,
+      cart: { ...state.cart, shippingAddress: { ...state.cart.shippingAddress, location: action.payload,},},
     };
     case 'SAVE_PAYMENT_METHOD':
     return {
