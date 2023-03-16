@@ -36,7 +36,7 @@ export default function PlaceOrderScreen() {
     const { state, dispatch: ctxDispatch } = useContext(Store);
     const { cart, userInfo } = state;
 
-    const  round2 = (num) => Math.round(num * 100 + Number.EPSLON) / 100; //123.2345 => 123.23
+    const  round2 = (num) => Math.round(num * 100 + Number.EPSILON) / 100; //123.2345 => 123.23
     cart.itemsPrice = round2(
         cart.cartItems.reduce((a, c) => a + c.quantity * c.price, 0)
     );
@@ -159,7 +159,7 @@ export default function PlaceOrderScreen() {
                             </ListGroup.Item>
                             <ListGroup.Item>
                                 <div className="d-grid">
-                                    <Button type="button" onClick={placeOrderHandler}>Place Order</Button>
+                                    <Button type="button" onClick={placeOrderHandler} disabled={cart.cartItems.length === 0}>Place Order</Button>
                                 </div>
                                 {loading && <LoadingBox></LoadingBox>}
                             </ListGroup.Item>
