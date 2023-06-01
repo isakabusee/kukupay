@@ -1,9 +1,16 @@
-import React, { useReducer, useEffect } from 'react';
+import React, { useContext, useReducer, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import axios from 'axios';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 import { Store } from '../Store';
 import { Helmet } from 'react-helmet-async';
+import { getError } from '../utils';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Card from 'react-bootstrap/Card';
+import ListGroup from 'react-bootstrap/ListGroup';
+import { Link } from 'react-router-dom';
 
 function reducer(state, action) {
     switch (action.type) {
@@ -27,7 +34,7 @@ export default function OrderScreen() {
     const { id: orderId } = params;
     const navigate = useNavigate();
 
-    const [{ loading, error, order }, dispatch] useReducer(reducer, { 
+    const [{ loading, error, order }, dispatch,] = useReducer(reducer, { 
         loadind: true,
         order: {},
         error: '',
@@ -87,6 +94,42 @@ export default function OrderScreen() {
                         }
                     </Card.Body>
 
+                </Card>
+                <Card className="mb-3">
+                    <Card.body>
+                        <Card.Title>Payment</Card.Title>
+                        <Card.Text>
+                            <strong>Method:</strong>{order.paymentMethod}
+                        </Card.Text>
+                        {order.isPaid ? (
+                            <MessageBox variant="success">
+                                Paid at {order.paidAt}
+                            </MessageBox>
+                        ) : (
+                            <MessageBox variant="danger">Not Paid</MessageBox>
+                        )}
+                    </Card.body>
+
+                </Card>
+                <Card className="mb-3">
+                    <Card.Body>
+                        <Card.Title>Items</Card.Title>
+                        <ListGroup variant="flush">
+                            {order.orderItems.map((item) => (
+                                <ListGroup.Item key={item._id}>
+                                    <Row className="align-items-center">
+                                        <Col md={6}><img src={item.img} alt={item.name} className="img-fluid rounded img-thumbnail"></img>{' '}
+                                        <Link to={`/product/${item.slug}`}>{item.name}</Link>
+                                        </Col>
+                                        <Col md={3}>
+                                            <span>{item.quantity}</span>
+                                        </Col>
+                                        <Col md={3}>${item.price}</Col>
+                                    </Row>
+                                </ListGroup.Item>
+                            ))}
+                        </ListGroup>
+                    </Card.Body>
                 </Card>
             </Col>
         </Row>
