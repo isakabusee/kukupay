@@ -77,7 +77,7 @@ function App() {
             <Route path="/payment" element={<PaymentMethodScreen />} />
             <Route path="/signup" element={<SignUpScreen />} />
             <Route path="/placeorder" element={<PlaceOrderScreen />} />
-            <Route path="/order/" element={<OrderScreen />} />
+            <Route path="/order/:id" element={<OrderScreen />} />
 
             </Routes>
         </Container>
