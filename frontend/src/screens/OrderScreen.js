@@ -107,7 +107,8 @@ export default function OrderScreen() {
     // function onError(err) {
     //     toast.error(getError(err));
     // }
-
+    const [{ isPending }, paypalDispatch] = usePayPalScriptReducer();
+    
     useEffect(()=> {
         const fetchOrder = async () => {
             try {
@@ -125,6 +126,20 @@ export default function OrderScreen() {
         }
         if (!order._id || (order._id && order._id !== orderId)) {
             fetchOrder();
+        } else {
+          const loadPaypalScript = async () => {
+            const { data: clientId } = await axios.get('/api/keys/paypal', {
+              headers: { authorization: `Bearer ${userInfo.token}`},
+            });
+            paypalDispatch({
+              type: 'resetOptions',
+              value: {
+                'client-id': clientId,
+                currency: 'USD',
+              },
+            })
+          }
+          loadPaypalScript();
         }
     }, [order, userInfo, orderId, navigate]);
     //     if (
