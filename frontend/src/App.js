@@ -19,6 +19,8 @@ import { LinkContainer } from 'react-router-bootstrap';
 import { Store } from './Store';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
+import OrderHistoryScreen from './screens/OrderHistoryScreen';
+import NavbarToggle from 'react-bootstrap/esm/NavbarToggle';
 
 
 
@@ -38,12 +40,14 @@ function App() {
     <div className="d-flex flex-column site-container">
         <ToastContainer position="bottom-center" limit={1} />
     <header>
-        <Navbar bg="dark" variant="dark">
+        <Navbar bg="dark" variant="dark" expand="lg">
                 <Container>
                         <LinkContainer to="/">
                         <Navbar.Brand>KukuPay Marketplace</Navbar.Brand>    
                         </LinkContainer>
-                        <Nav className="me-auto">
+                        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                        <Navbar.Collapse id="basic-navbar-nav">
+                        <Nav className="me-auto w-100 justify-content-end">
                             <Link to="/cart" className="nav-link">Cart {cart.cartItems.length > 0 && (
                                 <Badge pill bg="danger">{cart.cartItems.reduce((a, c) => a + c.quantity, 0)}</Badge>
                             )}</Link>
@@ -62,6 +66,7 @@ function App() {
                                 <Link className="nav-link" to="/signin"> Sign In </Link>
                             )}
                         </Nav>
+                        </Navbar.Collapse>
                 </Container>
         </Navbar>
 
@@ -78,6 +83,7 @@ function App() {
             <Route path="/signup" element={<SignUpScreen />} />
             <Route path="/placeorder" element={<PlaceOrderScreen />} />
             <Route path="/order/:id" element={<OrderScreen />} />
+            <Route path="/orderhistory" element={<OrderHistoryScreen />} />
 
             </Routes>
         </Container>
