@@ -10,6 +10,7 @@ import SignUpScreen from './screens/SignupScreen';
 import PaymentMethodScreen from './screens/PaymentMethodScreen';
 import PlaceOrderScreen from './screens/PlaceOrderScreen';
 import OrderScreen from './screens/OrderScreen';
+import ProfileScreen from './screens/ProfileScreen';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
@@ -20,7 +21,7 @@ import { Store } from './Store';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 import OrderHistoryScreen from './screens/OrderHistoryScreen';
-import NavbarToggle from 'react-bootstrap/esm/NavbarToggle';
+// import NavbarToggle from 'react-bootstrap/esm/NavbarToggle';
 
 
 
@@ -34,6 +35,7 @@ function App() {
         localStorage.removeItem('userInfo');
         localStorage.removeItem('shippingAddress');
         localStorage.removeItem('paymentMethod');
+        window.location.href = '/signin';
     }
   return (
         <Router>
@@ -53,7 +55,7 @@ function App() {
                             )}</Link>
                             {userInfo ? (
                                 <NavDropdown title={userInfo.name} id="basic-nav-dropdown">
-                                    <LinkContainer to="/profie">
+                                    <LinkContainer to="/profile">
                                         <NavDropdown.Item>User Profile</NavDropdown.Item>
                                     </LinkContainer>
                                     <LinkContainer to="/orderhistory">
@@ -81,6 +83,7 @@ function App() {
             <Route path="/shipping" element={<ShippingAddressScreen />} />
             <Route path="/payment" element={<PaymentMethodScreen />} />
             <Route path="/signup" element={<SignUpScreen />} />
+            <Route path="/profile" element={<ProfileScreen />} />
             <Route path="/placeorder" element={<PlaceOrderScreen />} />
             <Route path="/order/:id" element={<OrderScreen />} />
             <Route path="/orderhistory" element={<OrderHistoryScreen />} />
