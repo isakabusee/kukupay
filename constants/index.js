@@ -1,0 +1,1 @@
+export const API_URL = 'https://kukupay-api-rz5n2.ondigitalocean.app';
