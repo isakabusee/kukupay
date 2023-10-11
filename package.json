@@ -1,6 +1,6 @@
 {
   "name": "frontend",
-  "proxy": "http://localhost:5000",
+  "proxy": "https://kukupay-api-rz5n2.ondigitalocean.app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
